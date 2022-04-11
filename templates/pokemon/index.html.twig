@@ -1,0 +1,271 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pokemon: Kanon edition!{% endblock %}
+
+{% block stylesheets %}
+<style>
+.pokedex-heading{
+    overflow-y: auto;
+    max-height: 20vh;
+}
+.pokemon-container{
+    overflow-y: auto;
+    max-height: 80vh;
+}
+.js-pokeamount{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+.pokemon{
+    position: relative;
+}
+body{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid gradient-bg">
+    <div class="row">
+        <div class="pokedex-heading col-9">
+            <h1 class="display-1 mt-2">Pokedex</h1>
+            <p class="text-muted">Gevangen: <span class="js-caught">10</span> - Score: <span class="js-score">12</span></p>
+            
+        </div>
+        <div class="col-3">
+            <img class="img-fluid" src="assets/img/male.png">
+        </div>
+        
+    </div>
+    <div class="row"><div class="col-12"><hr></div></div>
+    <div class="row">
+        <div class="pokemon-container col-md-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">6</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">2</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/charizard.png">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pokemon">
+                        <span class="js-pokeamount display-3 text-dark">3</span>
+                        <img src="https://img.pokemondb.net/sprites/home/normal/blastoise.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <img src="https://img.pokemondb.net/sprites/home/normal/bulbasaur.png">
+    <h2>Bulbasaur</h2>
+    <p class="text-muted">#001</p>
+    <p>Aantal gevangen Bulbasaurs: <span class="js-amount-specific">4</span></p>
+    <div class="row justify-content-center mb-5">
+        <div class="col-4"><button type="button" class="btn btn-primary btn-lg">Ruilen</button></div>
+        <div class="col-5"><button type="button" class="btn btn-primary btn-lg">Evolueren</button></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+if(findGetParameter('firsttime')){
+    Swal.fire({
+        title: 'Welkom Pokemon Trainer!',
+        html: 'Welkom in het kanon, vandaag kan je pokémons vangen door shotjes te doen.<br>Per shotje aangekocht, krijg je 1 random pokémon.<br>Heb je 5 dezelfde pokémons? Dan kan je deze evolueren voor een pokemon die meer waard is.<br><br>Veel Succes!',
+        icon: 'question',
+        confirmButtonText: "Catch 'em all!"
+    }
+    ).then((result) => {
+        if(result.isConfirmed){
+            window.location.href="/pokemon/pokemons";
+        }
+    })
+}
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+</script>
+{% endblock %}

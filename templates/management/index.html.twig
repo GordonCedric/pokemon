@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kanon: Pokemon Editie | Manage{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row mt-5">
+        <h1>Pokemon management</h1>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="input-group">
+                <input type="text" class="form-control shotAmount" placeholder="Aantal shotjes" value="1" aria-label="Aantal shotjes met hoger lager">
+                <button class="btn btn-outline-secondary" onclick='subtract()' type="button">-</button>
+                <button class="btn btn-outline-secondary" onclick='add()' type="button">+</button>
+                <button class="btn btn-outline-primary" onclick="makeQR()" type="button">Maak QR Code</button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" class="img-fluid js-qr" alt="QR Code">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    const password = prompt('Enter password');
+    let currQR = 0;
+    if(password != "smallppdar"){
+        window.location = '/pokemon/pokemons'
+    }
+    let timer = setInterval(function(){
+        const jsonObject = { id: currQR };
+        console.log(jsonObject);
+        handleData('/pokemon/management/checkQR', disableQR, null, 'POST', JSON.stringify(jsonObject));
+    }, 2000);
+    const subtract = () => {
+        document.querySelector('.shotAmount').value = +document.querySelector('.shotAmount').value - 1;
+    }
+    const add = () => {
+        document.querySelector('.shotAmount').value = +document.querySelector('.shotAmount').value + 1
+    }
+    const makeQR = () => {
+        let amount = document.querySelector('.shotAmount').value;
+        const jsonObject = { amount: amount, password: password };
+        console.log(jsonObject);
+        handleData('/pokemon/management/newQR', showQRCode, null, 'POST', JSON.stringify(jsonObject));
+    }
+    const showQRCode = (data) => {
+        document.querySelector('.js-qr').src = data.qrurl;
+        currQR = data.id;
+    }
+    const disableQR = (data) => {
+        if(data.used == 1){
+            document.querySelector('.js-qr').src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC';
+        }
+    }
+</script>
+{% endblock %}

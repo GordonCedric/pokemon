@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pokemon: Kanon edition!{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+var radios = document.querySelectorAll('.radioBtn');
+console.log(radios);
+for(var i = 0, max = radios.length; i < max; i++) {
+    radios[i].onclick = function() {
+        if(this.value == 1){
+            document.querySelector('.js-img').src = 'assets/img/male.png';
+        } else if(this.value == 0){
+            document.querySelector('.js-img').src = 'assets/img/female.png';
+        }
+    }
+}
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid gradient-bg">
+    <div class="row">
+        <div class="pokedex-heading col-md-12">
+            <h1 class="text-center display-1 mt-2">Welkom op het pokemon feestje van Centaura!</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <form action="/pokemon/sendname" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Kies een trainer naam:</label>
+                <input type="text" name="trainername" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Gelieve geen aanstootgevende naam te kiezen aangezien wij dan gedwongen zijn om je toegang van het spel af te nemen.</div>
+            </div>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input radioBtn" value="1" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Man
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input radioBtn" value="0" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Vrouw
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Kies!</button>
+        </form>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <img class="js-img" src="assets/img/male.png" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}
